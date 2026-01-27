@@ -943,7 +943,7 @@ class ActionsSubtotal extends \subtotal\RetroCompatCommonHookActions
 			|| in_array('orderstoinvoicesupplier', $contextArray)
 			|| in_array('orderlist', $contextArray)
 		) {
-			$this->_billOrdersAddCheckBoxForTitleBlocks();
+			$this->billOrdersAddCheckBoxForTitleBlocks();
 		} else {
 			// when automatic generate is enabled : keep last selected options from last "builddoc" action (ganerate document manually)
 			if (!getDolGlobalString('MAIN_DISABLE_PDF_AUTOUPDATE')) {
@@ -3365,7 +3365,7 @@ public function printObjectLine($parameters, &$object, &$action, $hookmanager)
 			$colspan = 4;
 
 	// HTML 5 data for js
-	$data = $this->_getHtmlData($parameters, $object, $action, $hookmanager);
+	$data = $this->getHtmlData($parameters, $object, $action, $hookmanager);
 
 			$class													= '';
 			if (!empty(getDolGlobalString('SUBTOTAL_USE_NEW_FORMAT')))		$class	.= ' newSubtotal';
@@ -3477,7 +3477,7 @@ public function printObjectLine($parameters, &$object, &$action, $hookmanager)
 	print '<!-- origin line id = ' . $line->origin_line_id . ' -->'; // id of order line
 
 	// HTML 5 data for js
-	$data = $this->_getHtmlData($parameters, $object, $action, $hookmanager);
+	$data = $this->getHtmlData($parameters, $object, $action, $hookmanager);
 
 			$class													= '';
 			if (!empty(getDolGlobalString('SUBTOTAL_USE_NEW_FORMAT')))		$class	.= ' newSubtotal ';
